@@ -1,9 +1,8 @@
 # DummyProxy
+<img align="right" width="200" src="https://imgur.com/a/0w8SG">
 
 ## A dead simple transparent proxy
 
-
-![DummyProxy](./computer.png "DummyProxy" | width=200)
 
 ### Use Case
 
