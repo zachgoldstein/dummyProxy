@@ -8,12 +8,12 @@
 
 ### Installation
 
-`npm install DummyProxy`
+`npm install dummy-proxy`
 
 ### Usage
 
 ```
-const DumbProxy = require("dummyProxy");
+const DumbProxy = require("dummy-proxy");
 prox = new DumbProxy("http://127.0.0.1:3001", "http://127.0.0.1:3000");
 prox.addRoute("/simple", () => {
   return {

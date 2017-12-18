@@ -1,4 +1,4 @@
-const DummyProxy = require("dummyProxy");
+const DummyProxy = require("dummy-proxy");
 const casual = require("casual");
 const moment = require("moment");
 
