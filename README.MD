@@ -2,7 +2,8 @@
 
 ## A dead simple transparent proxy
 
-![DummyProxy](./computer.png "DummyProxy")
+
+![DummyProxy](./computer.png "DummyProxy" | width=200)
 
 ### Use Case
 
@@ -42,7 +43,3 @@ Like https://github.com/donasaur/http-proxy-rules
 - Passes through all non-routed traffic
 
 - Easy dummy data generation
-
-- Easy load local json files
-
-- Easy replay HAR?
