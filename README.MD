@@ -1,5 +1,5 @@
 # DummyProxy
-<img align="right" width="200" src="https://imgur.com/a/0w8SG">
+<img align="right" width="200" src="https://i.imgur.com/DPrpogq.png">
 
 ## A dead simple transparent proxy
 
