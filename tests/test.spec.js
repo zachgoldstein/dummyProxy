@@ -12,7 +12,7 @@ describe("DummyProxy", function() {
       true
     );
     let route = "/simple";
-    prox.addRoute(route, () => {
+    prox.addRoute(route, {}, () => {
       return { test: 123 };
     });
     httpReq = sinon.spy(http, "request");
@@ -52,6 +52,24 @@ describe("DummyProxy", function() {
           done();
         });
     });
+
+    it("returns dummy data when a specific http method is used", function(done) {
+      let route = "/testpost";
+      expectedData = "POST SUCCESS"
+      prox.addRoute(route, {method: "POST"}, () => {
+        return { test: expectedData };
+      });
+      request(prox.server)
+        .post(route)
+        .expect("Content-Type", /json/)
+        .expect(200)
+        .end(function(err, res) {
+          expect(res.body).to.not.be.undefined;
+          expect(res.body["test"]).to.eq(expectedData);
+          if (err) throw err;
+          done();
+        });
+    })
 
     it("does not issue a request to the origin server", function(done) {
       request(prox.server)

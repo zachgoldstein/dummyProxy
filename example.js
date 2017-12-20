@@ -8,7 +8,7 @@ const location = argv["location"] || "http://127.0.0.1:3000";
 
 prox = new DummyProxy(location, origin);
 
-prox.addRoute("/simple", () => {
+prox.addRoute("/simple", {}, () => {
   return {
     email: casual.email,
     firstname: casual.first_name,
@@ -25,7 +25,7 @@ Returns:
 
 */
 
-prox.addRoute("/withParams/:name", params => {
+prox.addRoute("/withParams/:name", {}, params => {
   return {
     email: casual.email,
     name: params.name,
@@ -38,8 +38,26 @@ prox.addRoute("/withParams/:name", params => {
 curl 'http://127.0.0.1:3000/withParams/scraglepuss?age=28'
 
 Returns
-{"email":"Judah.Kilback@Leuschke.ca","name":"scraglepuss","age":"28","password":"6Benny37"}%
+{"email":"Judah.Kilback@Leuschke.ca","name":"scraglepuss","age":"28","password":"6Benny37"}
 
 */
+
+prox.addRoute("/postReq/:name", { method:"POST" }, params => {
+  return {
+    email: casual.email,
+    name: params.name,
+    age: params.age,
+    password: casual.password
+  };
+});
+/*
+
+curl -X POST 'http://127.0.0.1:3000/postReq/zach'
+
+Returns
+{"email":"Powlowski_Elias@Friedrich.net","name":"zach","password":"5Sibyl97"}
+
+*/
+
 
 prox.start();
