@@ -3,8 +3,11 @@
 
 ## A dead simple transparent proxy
 
-
 ### Use Case
+
+During local development it's very useful to mock out data returned by some endpoint that you rely on. Very quickly this can get painful to manage as you find yourself dancing between lots of git stashes for different sets of mocked data.
+
+DummyProxy is a extremely simple server that you run in front of your *real* endpoint that will return mocked data for endpoints of your choosing. The rest gets passed through to your endpoint as it normally would.
 
 ### Installation
 
@@ -30,15 +33,9 @@ See `example.js` for a less trivial example.
 
 This is especially useful with a fantastic dummy data generator like `casual`, and an arg parser like `minimist`.
 
+### What this is not
 
-
-Features:
-
-- Dead simple proxy: https://github.com/nodejitsu/node-http-proxy
-
-- Routes certain endpoints to local dummy data functions
-Like https://github.com/donasaur/http-proxy-rules
-
-- Passes through all non-routed traffic
-
-- Easy dummy data generation
+This is not a fully featured proxy. It's mean to be as simple as possible.
+It purposely does not support:
+- HTTPS
+- Real transparency via SNI
