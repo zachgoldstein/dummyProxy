@@ -18,7 +18,7 @@ DummyProxy is a extremely simple server that you run in front of your *real* end
 ```
 const DumbProxy = require("dummy-proxy");
 prox = new DumbProxy("http://127.0.0.1:3001", "http://127.0.0.1:3000");
-prox.addRoute("/simple", () => {
+prox.addRoute("/simple", {}, () => {
   return {
     email: "prox@awesomesauce.com",
     firstname: "proxy",
