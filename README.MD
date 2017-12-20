@@ -35,7 +35,7 @@ This is especially useful with a fantastic dummy data generator like `casual`, a
 
 ### What this is not
 
-This is not a fully featured proxy. It's mean to be as simple as possible.
+This is not a fully featured proxy. It's meant to be as simple as possible.
 It purposely does not support:
 - HTTPS
 - Real transparency via SNI
