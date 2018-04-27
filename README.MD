@@ -39,3 +39,5 @@ This is not a fully featured proxy. It's meant to be as simple as possible.
 It purposely does not support:
 - HTTPS
 - Real transparency via SNI
+
+wut.
